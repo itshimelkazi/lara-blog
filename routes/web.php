@@ -2,19 +2,32 @@
 
 
 
-Route::get('/', function () {
-	return view('welcome');
-});
-
- 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/create_post', 'PostController@index');
-
-// Route::get('/users', 'UserProfileController@lists');
-// Route::get('/edit_user', 'UserProfileController@edit');
+Route::get('/', 'PostsController@index');
 
 
-Route::get('/profile', 'UserProfileController@index');
-Route::get('/profile/update', 'UserProfileController@update');
+Route::get('/posts/create', 'PostsController@create');
+
+Route::get('/posts/{post}', 'PostsController@show');
+
+Route::post('/posts', 'PostsController@store');
+
+
+
+
+Route::post('/posts/{post}/comments', 'CommentsController@store');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

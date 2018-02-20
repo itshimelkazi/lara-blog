@@ -15,17 +15,17 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            // $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->text('content');
-            $table->binary('thumbnail');
+            // $table->binary('thumbnail');
             $table->rememberToken();
             $table->timestamps();
         });
 
-        Schema::table('posts', function ($table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
+        // Schema::table('posts', function ($table) {
+        //     $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        // });
 
 
     }
